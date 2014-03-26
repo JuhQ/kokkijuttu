@@ -1,0 +1,10 @@
+{
+  "db": "kokkikoulu",
+  "cookie": "kokkikoulu",
+  "port": 3051,
+  "facebook": {
+    "clientID": 547235322022594,
+    "clientSecret": "62fc12b1adb515957baeb4f9bd2c3241",
+    "callbackURL": "http://localhost:3051/auth/facebook/callback"
+  }
+}
