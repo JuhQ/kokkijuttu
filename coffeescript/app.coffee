@@ -48,6 +48,16 @@ app.get '/api/user/:id', api.user
 app.post '/api/user', api.saveUser
 
 
+
+app.post '/api/jobs/create', api.createJob
+app.get '/api/jobs/latest', api.getLatestJobs
+app.post '/api/jobs/search/:query', api.searchJob
+
+app.get '/api/user/search/:query', api.searchUser
+
+
+
+
 # Redirect the user to Facebook for authentication.  When complete,
 # Facebook will redirect the user back to the application at
 #     /auth/facebook/callback

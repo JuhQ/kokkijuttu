@@ -48,6 +48,10 @@ app.run();
 ;app.controller('index', function($scope) {
   return console.log("homepage");
 });
+;create.coffee;
+;edit.coffee;
+;job.coffee;
+;list.coffee;
 ;app.controller('profile', function($scope, $stateParams, $resource) {
   return $scope.user = profileService.find($stateParams.id);
 });
@@ -76,6 +80,24 @@ app.controller('profile.edit', function($scope, $stateParams, profileService) {
     templateUrl: 'profile-picture.html',
     scope: {
       user: '=ngModel'
+    }
+  };
+});
+;app.factory('jobsService', function($resource) {
+  return {
+    create: function(data) {
+      var Job, job;
+      Job = $resource('/api/jobs/create');
+      job = new Job(data);
+      return job.$save();
+    },
+    getLatest: function() {
+      return $resource('/api/jobs/latest').query();
+    },
+    find: function(query) {
+      return $resource('/api/jobs/search/:query').query({
+        query: query
+      });
     }
   };
 });

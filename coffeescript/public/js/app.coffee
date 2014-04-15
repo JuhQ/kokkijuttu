@@ -39,8 +39,6 @@ app.config ($stateProvider, $locationProvider) ->
       abstract: true
       url: '/search'
       templateUrl: 'search/index.html'
-      
-    
     .state 'search.index',
       url: ''
       templateUrl: 'search/search-both.html'
