@@ -4,17 +4,30 @@ app = angular.module('app', [
   'ui.router.compat'
 ])
 
-app.config ($stateProvider) ->
+app.config ($stateProvider, $locationProvider) ->
+
+  $locationProvider.html5Mode(true)
+
   $stateProvider
 
     .state 'index',
-      url: ''
+      url: '/'
       templateUrl: 'index.html'
       controller: 'index'
+
     .state 'profile',
+      abstract: true
       url: '/profile/:id'
-      templateUrl: 'profile.html'
+      templateUrl: 'profile/profile.html'
+      
+    .state 'profile.index',
+      url: ''
+      templateUrl: 'profile/profile-index.html'
       controller: 'profile'
+    .state 'profile.edit',
+      url: '/edit'
+      templateUrl: 'profile/profile-edit.html'
+      controller: 'profile.edit'
 
 
     .state 'facebook_url_issue',
@@ -26,17 +39,20 @@ app.config ($stateProvider) ->
       abstract: true
       url: '/search'
       templateUrl: 'search/index.html'
-      controller: 'search'
+      
     
+    .state 'search.index',
+      url: ''
+      templateUrl: 'search/search-both.html'
+      controller: 'search'
     .state 'search.people',
       url: '/people'
       templateUrl: 'search/people.html'
       controller: 'search.people'
-
-    .state 'search.job',
-      url: '/job'
-      templateUrl: 'search/job.html'
-      controller: 'search.job'
+    .state 'search.jobs',
+      url: '/jobs'
+      templateUrl: 'search/jobs.html'
+      controller: 'search.jobs'
     
 
 

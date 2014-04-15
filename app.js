@@ -64,6 +64,8 @@ app.get('/login/fail', routes.loginFail);
 
 app.get('/api/user/:id', api.user);
 
+app.post('/api/user', api.saveUser);
+
 app.get('/auth/facebook', passport.authenticate('facebook', {
   scope: ['email', 'user_birthday']
 }));
@@ -72,6 +74,8 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', {
   successRedirect: '/login/success',
   failureRedirect: '/login/fail'
 }));
+
+app.get('/:foo*', routes.index);
 
 passport.serializeUser(function(user, done) {
   return done(null, user.id);

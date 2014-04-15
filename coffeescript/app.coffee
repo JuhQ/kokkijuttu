@@ -45,6 +45,7 @@ app.get '/login/success', routes.loginSuccess
 app.get '/login/fail', routes.loginFail
 
 app.get '/api/user/:id', api.user
+app.post '/api/user', api.saveUser
 
 
 # Redirect the user to Facebook for authentication.  When complete,
@@ -61,6 +62,11 @@ app.get '/auth/facebook/callback', passport.authenticate('facebook',
   successRedirect: '/login/success'
   failureRedirect: '/login/fail'
 )
+
+
+
+# FIXME
+app.get '/:foo*', routes.index
 
 
 passport.serializeUser (user, done) ->
