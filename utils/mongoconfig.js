@@ -34,6 +34,20 @@ module.exports = function(settings) {
       }
     }
   });
+  userSchema = mongoose.Schema({
+    id: 'Number',
+    title: 'String',
+    description: 'String',
+    created: {
+      type: Date,
+      "default": Date.now
+    },
+    hidden: {
+      type: Boolean,
+      "default": false
+    }
+  });
   mongoose.model('users', userSchema);
+  mongoose.model('jobs', jobSchema);
   return mongoose.connect('localhost', settings.db);
 };

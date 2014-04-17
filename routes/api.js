@@ -18,7 +18,7 @@ exports.getLatestJobs = function(req, res) {
   var Jobs, mongoose;
   mongoose = require('mongoose');
   Jobs = mongoose.model('jobs');
-  return Jobs.find().sort('-date').exec(function(err, data) {
+  return Jobs.find().sort('-created').exec(function(err, data) {
     return res.jsonp(data);
   });
 };
