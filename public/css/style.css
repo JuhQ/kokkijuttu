@@ -12,6 +12,7 @@ blockquote {
 img {
   max-width: 100%;
 }
+<<<<<<< HEAD
 .navbar {
   background-color: #fb8518;
   border: 0;
@@ -22,6 +23,10 @@ img {
 }
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
+=======
+textarea {
+  width: 100%;
+>>>>>>> a97e50ec38eb7b0a6cbc3cd5117fa2ca87b096c7
 }
 .home-huge-banner {
   background: url('/images/grilli-liekki.jpg');
