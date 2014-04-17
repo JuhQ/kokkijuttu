@@ -1,3 +1,6 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 a {
   cursor: pointer;
 }
@@ -8,6 +11,17 @@ blockquote {
 }
 img {
   max-width: 100%;
+}
+.navbar {
+  background-color: #fb8518;
+  border: 0;
+  border-radius: 0px;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
 }
 .home-huge-banner {
   background: url('/images/grilli-liekki.jpg');
@@ -23,6 +37,10 @@ img {
 .home-huge-banner .push-down {
   position: relative;
   top: 350px;
+}
+.home-huge-banner .headline {
+  font-size: 2em;
+  color: #ffffff;
 }
 .centered {
   text-align: center;

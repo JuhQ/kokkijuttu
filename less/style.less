@@ -1,6 +1,10 @@
 @import 'mixins';
 @import 'variables';
 
+body {
+  font-family: 'Open Sans', sans-serif;  
+}
+
 a {
   cursor: pointer;
 }
@@ -14,6 +18,22 @@ img {
   max-width: 100%;
 }
 
+.navbar {
+  background-color: @orange;
+  border: 0;
+  border-radius: 0px;
+}
+
+.navbar-default {
+  
+  .navbar-brand {
+    color: @white;
+  }
+  .navbar-nav>li>a {
+    color: @white;
+  }
+}
+
 .home-huge-banner {
   background: url('/images/grilli-liekki.jpg');
   width: 100%;
@@ -25,6 +45,11 @@ img {
   .push-down {
     position: relative;
     top: 350px;
+  }
+
+  .headline {
+    font-size: 2em;
+    color: @white;
   }
 }
 
