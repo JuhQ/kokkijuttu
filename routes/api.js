@@ -66,6 +66,8 @@ exports.user = function(req, res) {
   mongoose = require('mongoose');
   Users = mongoose.model('users');
   return Users.findOne().where('id').equals(req.params.id).select('id name quotes').exec(function(err, data) {
+    data = data.toObject();
+    data.isLoggedinUser = req.user === data.id;
     return res.jsonp(data);
   });
 };

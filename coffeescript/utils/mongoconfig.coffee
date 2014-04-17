@@ -19,6 +19,16 @@ module.exports = (settings) ->
     random: {type: [Number], index: '2d', default: -> return [Math.random(), Math.random()]}
   }
 
+  userSchema = mongoose.Schema {
+    id: 'Number'
+    title: 'String'
+    description: 'String'
+    created: { type: Date, default: Date.now }
+    hidden: { type: Boolean, default: false }
+  }
+
+
   mongoose.model 'users', userSchema
+  mongoose.model 'jobs', jobSchema
 
   mongoose.connect 'localhost', settings.db

@@ -17,7 +17,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('profile/profile-index.html',
-    "<div class=\"container\"><div class=\"row\"><div class=\"col-md-12\"><a href=\"/profile/{{user.id}}/edit\" class=\"pull-right btn btn-primary\"><i class=\"fa fa-pencil\"></i> Muokkaa</a></div></div></div><div class=\"container\"><div class=\"row\"><div class=\"col-md-3\"><profile-picture ng-model=\"user\"></profile-picture></div><div class=\"col-md-9\"><h1>{{user.name}}</h1><blockquote><p>{{user.quotes}}</p></blockquote><a ng-click=\"my_function()\">click</a> sisältöä</div></div></div>"
+    "<div class=\"container\"><div class=\"row\" ng-if=\"user.isLoggedinUser\"><div class=\"col-md-12\"><a href=\"/profile/{{user.id}}/edit\" class=\"pull-right btn btn-primary\"><i class=\"fa fa-pencil\"></i> Muokkaa</a></div></div></div><div class=\"container\"><div class=\"row\"><div class=\"col-md-3\"><profile-picture ng-model=\"user\"></profile-picture></div><div class=\"col-md-9\"><h1>{{user.name}}</h1><blockquote><p>{{user.quotes}}</p></blockquote></div></div></div>"
   );
 
 

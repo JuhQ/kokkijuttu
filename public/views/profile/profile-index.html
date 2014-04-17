@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="row">
+  <div class="row" ng-if="user.isLoggedinUser">
     <div class="col-md-12">
       <a href="/profile/{{user.id}}/edit" class="pull-right btn btn-primary"><i class="fa fa-pencil"></i> Muokkaa</a>
     </div>
@@ -20,8 +20,7 @@
       <blockquote>
         <p>{{user.quotes}}</p>
       </blockquote>
-      <a ng-click="my_function()">click</a>
-      sisältöä
+
     </div>
   </div>
 </div>

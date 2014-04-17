@@ -1,4 +1,4 @@
-app.controller('profile', function($scope, $stateParams, $resource) {
+app.controller('profile', function($scope, $stateParams, profileService) {
   return $scope.user = profileService.find($stateParams.id);
 });
 

@@ -41,6 +41,22 @@ app.config(function($stateProvider, $locationProvider) {
     url: '/jobs',
     templateUrl: 'search/jobs.html',
     controller: 'search.jobs'
+  }).state('jobs', {
+    url: '/jobs',
+    templateUrl: 'jobs/list.html',
+    controller: 'jobs.list'
+  }).state('jobs.job', {
+    url: '/:id',
+    templateUrl: 'jobs/job.html',
+    controller: 'jobs.job'
+  }).state('jobs.edit', {
+    url: '/:id/edit',
+    templateUrl: 'jobs/edit.html',
+    controller: 'jobs.edit'
+  }).state('jobs.create', {
+    url: '/create',
+    templateUrl: 'jobs/create.html',
+    controller: 'jobs.create'
   });
 });
 
@@ -48,11 +64,19 @@ app.run();
 ;app.controller('index', function($scope) {
   return console.log("homepage");
 });
-;create.coffee;
-;edit.coffee;
-;job.coffee;
-;list.coffee;
-;app.controller('profile', function($scope, $stateParams, $resource) {
+;app.controller('jobs.create', function($scope) {
+  return console.log("jobs");
+});
+;app.controller('jobs.edit', function($scope) {
+  return console.log("jobs");
+});
+;app.controller('jobs.job', function($scope) {
+  return console.log("jobs");
+});
+;app.controller('jobs.list', function($scope) {
+  return console.log("jobs");
+});
+;app.controller('profile', function($scope, $stateParams, profileService) {
   return $scope.user = profileService.find($stateParams.id);
 });
 
@@ -129,7 +153,7 @@ app.controller('profile.edit', function($scope, $stateParams, profileService) {
 
 
   $templateCache.put('profile/profile-index.html',
-    "<div class=\"container\"><div class=\"row\"><div class=\"col-md-12\"><a href=\"/profile/{{user.id}}/edit\" class=\"pull-right btn btn-primary\"><i class=\"fa fa-pencil\"></i> Muokkaa</a></div></div></div><div class=\"container\"><div class=\"row\"><div class=\"col-md-3\"><profile-picture ng-model=\"user\"></profile-picture></div><div class=\"col-md-9\"><h1>{{user.name}}</h1><blockquote><p>{{user.quotes}}</p></blockquote><a ng-click=\"my_function()\">click</a> sisältöä</div></div></div>"
+    "<div class=\"container\"><div class=\"row\" ng-if=\"user.isLoggedinUser\"><div class=\"col-md-12\"><a href=\"/profile/{{user.id}}/edit\" class=\"pull-right btn btn-primary\"><i class=\"fa fa-pencil\"></i> Muokkaa</a></div></div></div><div class=\"container\"><div class=\"row\"><div class=\"col-md-3\"><profile-picture ng-model=\"user\"></profile-picture></div><div class=\"col-md-9\"><h1>{{user.name}}</h1><blockquote><p>{{user.quotes}}</p></blockquote></div></div></div>"
   );
 
 

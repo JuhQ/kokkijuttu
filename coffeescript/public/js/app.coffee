@@ -51,8 +51,24 @@ app.config ($stateProvider, $locationProvider) ->
       url: '/jobs'
       templateUrl: 'search/jobs.html'
       controller: 'search.jobs'
-    
 
+
+    .state 'jobs',
+      url: '/jobs'
+      templateUrl: 'jobs/list.html'
+      controller: 'jobs.list'
+    .state 'jobs.job',
+      url: '/:id'
+      templateUrl: 'jobs/job.html'
+      controller: 'jobs.job'
+    .state 'jobs.edit',
+      url: '/:id/edit'
+      templateUrl: 'jobs/edit.html'
+      controller: 'jobs.edit'
+    .state 'jobs.create',
+      url: '/create'
+      templateUrl: 'jobs/create.html'
+      controller: 'jobs.create'
 
 
 app.run()

@@ -3,7 +3,6 @@ exports.createJob = (req, res) ->
   if !req.user
     return null
 
-
   mongoose = require('mongoose')
   Jobs = mongoose.model 'jobs'
   
@@ -20,7 +19,7 @@ exports.getLatestJobs = (req, res) ->
   Jobs = mongoose.model 'jobs'
   Jobs
     .find()
-    .sort('-date')
+    .sort('-created')
     .exec (err, data) ->
       res.jsonp data
 
@@ -76,4 +75,7 @@ exports.user = (req, res) ->
     .equals(req.params.id)
     .select('id name quotes')
     .exec (err, data) ->
+      data = data.toObject()
+      data.isLoggedinUser = req.user is data.id
+
       res.jsonp data
